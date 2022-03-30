@@ -22,6 +22,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupRV() {
         binding.zigZagRV.layoutManager = LinearLayoutManager(this)
-        binding.zigZagRV.adapter = ZigZagAdapter(this, 5)
+        binding.zigZagRV.adapter = ZigZagAdapter(this, 5, 100)
     }
 }

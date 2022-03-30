@@ -8,9 +8,10 @@ class ZigZagViewHolder(private val binding: ItemZigzagBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
 
-    fun bind(manager: GridLayoutManager) {
+    fun bind(manager: GridLayoutManager, direction: Int) {
         binding.itemRV.layoutManager = manager
         binding.itemRV.adapter = MyAdapter()
+        binding.itemRV.layoutDirection = direction
     }
 
 }
