@@ -7,6 +7,8 @@ import com.shekharkg.zigzagrv.databinding.ItemCardBinding
 
 class MyAdapter : RecyclerView.Adapter<MyViewHolder>() {
 
+    val rvItemCount = 5
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = ItemCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyViewHolder(binding)
@@ -17,6 +19,6 @@ class MyAdapter : RecyclerView.Adapter<MyViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return 10
+        return rvItemCount
     }
 }

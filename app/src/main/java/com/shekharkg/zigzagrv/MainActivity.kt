@@ -1,13 +1,9 @@
 package com.shekharkg.zigzagrv
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.GridLayout
-import android.widget.GridLayout.HORIZONTAL
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.shekharkg.zigzagrv.adapter.MyAdapter
+import com.shekharkg.zigzagrv.adapter.ZigZagAdapter
 import com.shekharkg.zigzagrv.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -26,6 +22,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupRV() {
         binding.zigZagRV.layoutManager = LinearLayoutManager(this)
-        binding.zigZagRV.adapter = MyAdapter()
+        binding.zigZagRV.adapter = ZigZagAdapter(this, 5)
     }
 }

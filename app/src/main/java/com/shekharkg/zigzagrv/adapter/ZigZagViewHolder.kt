@@ -1,4 +1,16 @@
 package com.shekharkg.zigzagrv.adapter
 
-class ZigZagViewHolder {
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.shekharkg.zigzagrv.databinding.ItemZigzagBinding
+
+class ZigZagViewHolder(private val binding: ItemZigzagBinding) :
+    RecyclerView.ViewHolder(binding.root) {
+
+
+    fun bind(manager: GridLayoutManager) {
+        binding.itemRV.layoutManager = manager
+        binding.itemRV.adapter = MyAdapter()
+    }
+
 }
