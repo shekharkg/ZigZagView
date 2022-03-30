@@ -9,12 +9,13 @@ import com.shekharkg.zigzagrv.databinding.ItemZigzagBinding
 
 class ZigZagAdapter(
     span: Int,
-    totalItemCount: Int
+    totalCount: Int
 ) :
     RecyclerView.Adapter<ZigZagViewHolder>() {
 
-
-    private val rowCounts: Int = (totalItemCount / span) + (totalItemCount % span)
+    private val totalItemCount = totalCount
+    private val rowCounts: Int =
+        (totalCount / span) + (if ((totalCount % span == 0)) 0 else 1)
     private val spanCount = span
 
 
@@ -28,7 +29,11 @@ class ZigZagAdapter(
             if (position % 2 == 0) View.LAYOUT_DIRECTION_LTR else View.LAYOUT_DIRECTION_RTL
 
         val start = position * spanCount
-        val end = start + spanCount
+        var end = start + spanCount
+
+        if (end > totalItemCount) {
+            end -= (end - totalItemCount)
+        }
 
         holder.bind(GridLayoutManager(holder.itemView.context, spanCount), direction, start, end)
     }
